@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, Code, ShoppingCart, User, Lock } from 'lucide-react';
+import { Code, ShoppingCart, User, Lock } from 'lucide-react';
 
 const Projects = () => {
     const projects = [
@@ -54,7 +54,7 @@ const Projects = () => {
     ];
 
     return (
-        <section id="projects" className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 py-20">
+        <section id="projects" className="min-h-screen bg-gradient-to-br from-white via-gray-50 to-gray-100 py-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -63,10 +63,10 @@ const Projects = () => {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                        Featured <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Projects</span>
+                    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                        Featured <span className="bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">Projects</span>
                     </h2>
-                    <p className="text-slate-400 text-lg">Showcasing my recent work and technical expertise</p>
+                    <p className="text-gray-600 text-lg">Showcasing my recent work and technical expertise</p>
                 </motion.div>
 
                 <div className="space-y-8">
@@ -77,7 +77,7 @@ const Projects = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: index * 0.2 }}
-                            className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 shadow-2xl hover:shadow-cyan-500/10 transition-all duration-300 hover:border-cyan-500/30"
+                            className="glass bg-white/80 backdrop-blur-sm border border-gray-300 rounded-2xl p-8 shadow-xl hover:shadow-blue-500/10 transition-all duration-300 hover:border-blue-500/30"
                         >
                             <div className="grid md:grid-cols-3 gap-8">
                                 {/* Left - Icon & Title */}
@@ -85,9 +85,9 @@ const Projects = () => {
                                     <div className={`inline-flex p-4 bg-gradient-to-r ${project.gradient} rounded-xl mb-4`}>
                                         <project.icon size={40} className="text-white" />
                                     </div>
-                                    <h3 className="text-2xl font-bold text-white mb-2">{project.title}</h3>
-                                    <p className="text-cyan-400 font-medium mb-2">{project.subtitle}</p>
-                                    <p className="text-slate-400 text-sm flex items-center gap-2">
+                                    <h3 className="text-2xl font-bold text-gray-900 mb-2">{project.title}</h3>
+                                    <p className="text-blue-600 font-medium mb-2">{project.subtitle}</p>
+                                    <p className="text-gray-600 text-sm flex items-center gap-2">
                                         <Code size={16} />
                                         {project.date}
                                     </p>
@@ -95,25 +95,25 @@ const Projects = () => {
 
                                 {/* Middle - Description & Features */}
                                 <div className="md:col-span-2 space-y-4">
-                                    <p className="text-slate-300 leading-relaxed">{project.description}</p>
+                                    <p className="text-gray-700 leading-relaxed">{project.description}</p>
 
                                     <div className="space-y-2">
                                         {project.features.map((feature, idx) => (
                                             <div key={idx} className="flex items-start gap-2">
-                                                <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-cyan-400"></div>
-                                                <p className="text-slate-400 text-sm">{feature}</p>
+                                                <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-600"></div>
+                                                <p className="text-gray-600 text-sm">{feature}</p>
                                             </div>
                                         ))}
                                     </div>
 
                                     {/* Tech Stack */}
                                     <div>
-                                        <p className="text-slate-500 text-sm mb-2">Technologies:</p>
+                                        <p className="text-gray-500 text-sm mb-2">Technologies:</p>
                                         <div className="flex flex-wrap gap-2">
                                             {project.tech.map((tech, idx) => (
                                                 <span
                                                     key={idx}
-                                                    className="px-3 py-1 bg-slate-900/50 border border-slate-700/50 rounded-full text-cyan-400 text-sm"
+                                                    className="px-3 py-1 bg-blue-50 border border-blue-200 rounded-full text-blue-600 text-sm font-medium"
                                                 >
                                                     {tech}
                                                 </span>
@@ -123,12 +123,12 @@ const Projects = () => {
 
                                     {/* Tools */}
                                     <div>
-                                        <p className="text-slate-500 text-sm mb-2">Tools:</p>
+                                        <p className="text-gray-500 text-sm mb-2">Tools:</p>
                                         <div className="flex flex-wrap gap-2">
                                             {project.tools.map((tool, idx) => (
                                                 <span
                                                     key={idx}
-                                                    className="px-3 py-1 bg-slate-900/50 border border-slate-700/50 rounded-full text-slate-400 text-sm"
+                                                    className="px-3 py-1 bg-gray-50 border border-gray-200 rounded-full text-gray-700 text-sm"
                                                 >
                                                     {tool}
                                                 </span>

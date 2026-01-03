@@ -1,0 +1,42 @@
+[
+  {
+    "title": "E-Commerce Web Application",
+    "subtitle": "T-Shirt Store",
+    "date": "Sept 2025 – Present",
+    "summary": "React-based storefront with catalog, cart, and secure checkout.",
+    "highlights": [
+      "Integrated payment gateway and authentication",
+      "Order tracking system",
+      "Responsive UI with React Hooks",
+      "Cross-browser compatibility"
+    ],
+    "tech": ["React.js", "HTML", "CSS", "JavaScript"]
+  },
+  {
+    "title": "Personal Portfolio",
+    "subtitle": "Mini Project",
+    "date": "Oct 2025",
+    "summary": "Responsive React portfolio showcasing skills, projects, and contact info.",
+    "highlights": [
+      "Smooth navigation with React Router",
+      "Integrated animations for UX",
+      "Responsive design for all devices",
+      "Modern UI/UX principles"
+    ],
+    "tech": ["React.js", "CSS", "JavaScript"]
+  },
+  {
+    "title": "RFID Door Locking System",
+    "subtitle": "IoT Project",
+    "date": "Dec 2024 – Feb 2025",
+    "summary": "Arduino-based secure access control using RFID tags.",
+    "highlights": [
+      "Arduino cryptographic key storage",
+      "AES-256 encryption for data security",
+      "Protected 12 critical systems against data theft",
+      "Optimized performance via caching"
+    ],
+    "tech": ["Arduino UNO", "Embedded C", "AES-256"]
+  }
+]
+

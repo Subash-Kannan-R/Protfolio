@@ -14,7 +14,7 @@ const Hero = () => {
     ];
 
     return (
-        <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 pt-16">
+        <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-white via-gray-50 to-gray-100">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
                 <div className="grid md:grid-cols-2 gap-12 items-center">
                     {/* Left Content */}
@@ -30,7 +30,7 @@ const Hero = () => {
                             transition={{ delay: 0.2 }}
                             className="inline-block"
                         >
-                            <span className="px-4 py-2 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/30 rounded-full text-cyan-400 text-sm font-medium">
+                            <span className="px-4 py-2 bg-gradient-to-r from-blue-500/10 to-blue-600/10 border border-blue-500/30 rounded-full text-blue-600 text-sm font-medium">
                                 MERN Stack Developer
                             </span>
                         </motion.div>
@@ -39,11 +39,11 @@ const Hero = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.3 }}
-                            className="text-5xl md:text-6xl font-bold text-white"
+                            className="text-5xl md:text-6xl font-bold text-gray-900"
                         >
                             Hi, I'm{' '}
-                            <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                                Subash Kannan R
+                            <span className="bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">
+                            SubashKannan R
                             </span>
                         </motion.h1>
 
@@ -51,7 +51,7 @@ const Hero = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.4 }}
-                            className="text-lg text-slate-300 leading-relaxed"
+                            className="text-lg text-gray-700 leading-relaxed"
                         >
                             Full Stack Developer with expertise in building responsive, high-performance web applications.
                             Specializing in the MERN stack and delivering scalable solutions in dynamic team environments.
@@ -62,18 +62,18 @@ const Hero = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.5 }}
-                            className="flex flex-wrap gap-4 text-slate-400"
+                            className="flex flex-wrap gap-4 text-gray-600"
                         >
                             <div className="flex items-center gap-2">
-                                <MapPin size={18} className="text-cyan-400" />
+                                <MapPin size={18} className="text-blue-600" />
                                 <span>Chennai</span>
                             </div>
                             <div className="flex items-center gap-2">
-                                <Phone size={18} className="text-cyan-400" />
+                                <Phone size={18} className="text-blue-600" />
                                 <span>+91 8838506695</span>
                             </div>
                             <div className="flex items-center gap-2">
-                                <Mail size={18} className="text-cyan-400" />
+                                <Mail size={18} className="text-blue-600" />
                                 <span>subashkannan0309@gmail.com</span>
                             </div>
                         </motion.div>
@@ -89,23 +89,23 @@ const Hero = () => {
                                 href="https://github.com/Subash-Kannan-R"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="p-3 bg-slate-800 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-blue-500 rounded-lg transition-all duration-300 group"
+                                className="p-3 bg-white border border-gray-300 hover:bg-gradient-to-r hover:from-blue-500 hover:to-blue-600 rounded-lg transition-all duration-300 group"
                             >
-                                <Github size={24} className="text-slate-300 group-hover:text-white" />
+                                <Github size={24} className="text-gray-700 group-hover:text-white" />
                             </a>
                             <a
                                 href="https://linkedin.com/in/subashkannan-r"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="p-3 bg-slate-800 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-blue-500 rounded-lg transition-all duration-300 group"
+                                className="p-3 bg-white border border-gray-300 hover:bg-gradient-to-r hover:from-blue-500 hover:to-blue-600 rounded-lg transition-all duration-300 group"
                             >
-                                <Linkedin size={24} className="text-slate-300 group-hover:text-white" />
+                                <Linkedin size={24} className="text-gray-700 group-hover:text-white" />
                             </a>
                             <a
                                 href="mailto:subashkannan0309@gmail.com"
-                                className="p-3 bg-slate-800 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-blue-500 rounded-lg transition-all duration-300 group"
+                                className="p-3 bg-white border border-gray-300 hover:bg-gradient-to-r hover:from-blue-500 hover:to-blue-600 rounded-lg transition-all duration-300 group"
                             >
-                                <Mail size={24} className="text-slate-300 group-hover:text-white" />
+                                <Mail size={24} className="text-gray-700 group-hover:text-white" />
                             </a>
                         </motion.div>
                     </motion.div>
@@ -117,10 +117,10 @@ const Hero = () => {
                         transition={{ duration: 0.8, delay: 0.2 }}
                         className="relative"
                     >
-                        <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 shadow-2xl">
+                        <div className="glass bg-white/80 backdrop-blur-sm border border-gray-300 rounded-2xl p-8 shadow-xl">
                             <div className="flex items-center gap-3 mb-6">
-                                <Code2 className="text-cyan-400" size={28} />
-                                <h3 className="text-2xl font-bold text-white">Technical Skills</h3>
+                                <Code2 className="text-blue-600" size={28} />
+                                <h3 className="text-2xl font-bold text-gray-900">Technical Skills</h3>
                             </div>
 
                             <div className="grid grid-cols-2 gap-4">
@@ -130,9 +130,9 @@ const Hero = () => {
                                         initial={{ opacity: 0, scale: 0.8 }}
                                         animate={{ opacity: 1, scale: 1 }}
                                         transition={{ delay: 0.7 + index * 0.1 }}
-                                        className="bg-slate-900/50 border border-slate-700/50 rounded-lg p-4 hover:border-cyan-500/50 hover:shadow-lg hover:shadow-cyan-500/10 transition-all duration-300 group"
+                                        className="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-300 group"
                                     >
-                                        <p className="text-slate-300 font-medium group-hover:text-cyan-400 transition-colors">
+                                        <p className="text-gray-700 font-medium group-hover:text-blue-600 transition-colors">
                                             {skill}
                                         </p>
                                     </motion.div>
