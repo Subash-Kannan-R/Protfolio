@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, Phone, MapPin, Code2 } from 'lucide-react';
+import photo from '../assets/photo.jpg';
 
 const Hero = () => {
     const skills = [
@@ -14,7 +15,7 @@ const Hero = () => {
     ];
 
     return (
-        <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-white via-gray-50 to-gray-100">
+        <section id="home" className="min-h-screen flex items-center justify-center bg-[#0F172A]">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
                 <div className="grid md:grid-cols-2 gap-12 items-center">
                     {/* Left Content */}
@@ -28,30 +29,36 @@ const Hero = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.2 }}
-                            className="inline-block"
+                            className="inline-flex items-center gap-3 text-white/90"
                         >
-                            <span className="px-4 py-2 bg-gradient-to-r from-blue-500/10 to-blue-600/10 border border-blue-500/30 rounded-full text-blue-600 text-sm font-medium">
-                                MERN Stack Developer
-                            </span>
+                            <span className="hidden sm:inline-block w-12 h-px bg-[#F97366]/70"></span>
+                            <span className="text-sm tracking-wide">Hello</span>
+                            <span className="inline-block w-2 h-2 rounded-full bg-[#F97366]"></span>
                         </motion.div>
 
                         <motion.h1
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.3 }}
-                            className="text-5xl md:text-6xl font-bold text-gray-900"
+                            className="text-5xl md:text-6xl font-extrabold text-white"
                         >
-                            Hi, I'm{' '}
-                            <span className="bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">
-                            SubashKannan R
-                            </span>
+                            I’m <span className="text-white">SubashKannan R</span>
                         </motion.h1>
+
+                        <motion.h2
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.35 }}
+                            className="text-4xl md:text-5xl font-extrabold text-white mt-2"
+                        >
+                            <span className="text-[#F97366]">FullStack</span> Developer
+                        </motion.h2>
 
                         <motion.p
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.4 }}
-                            className="text-lg text-gray-700 leading-relaxed"
+                            className="text-lg text-gray-300 leading-relaxed"
                         >
                             Full Stack Developer with expertise in building responsive, high-performance web applications.
                             Specializing in the MERN stack and delivering scalable solutions in dynamic team environments.
@@ -62,7 +69,7 @@ const Hero = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.5 }}
-                            className="flex flex-wrap gap-4 text-gray-600"
+                            className="flex flex-wrap gap-4 text-gray-600 dark:text-gray-400"
                         >
                             <div className="flex items-center gap-2">
                                 <MapPin size={18} className="text-blue-600" />
@@ -82,7 +89,30 @@ const Hero = () => {
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.6 }}
+                            transition={{ delay: 0.55 }}
+                            className="flex gap-4"
+                        >
+                            <a
+                                href="#contact"
+                                className="px-5 py-3 rounded-lg bg-[#F97366] text-white font-medium shadow hover:opacity-90 transition"
+                            >
+                                Got a project?
+                            </a>
+                            <a
+                                href="/resume.pdf"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="px-5 py-3 rounded-lg border border-[#F97366] text-white font-medium hover:bg-[#F97366]/10 transition"
+                            >
+                                My resume
+                            </a>
+                        </motion.div>
+
+                        {/* Social Links */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.65 }}
                             className="flex gap-4"
                         >
                             <a
@@ -110,40 +140,53 @@ const Hero = () => {
                         </motion.div>
                     </motion.div>
 
-                    {/* Right Content - Skills */}
+                    {/* Right Content - Photo */}
                     <motion.div
                         initial={{ opacity: 0, x: 50 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className="relative"
+                        className="relative flex justify-center"
                     >
-                        <div className="glass bg-white/80 backdrop-blur-sm border border-gray-300 rounded-2xl p-8 shadow-xl">
-                            <div className="flex items-center gap-3 mb-6">
-                                <Code2 className="text-blue-600" size={28} />
-                                <h3 className="text-2xl font-bold text-gray-900">Technical Skills</h3>
-                            </div>
+                        {/* Concentric coral rings behind avatar */}
+                        <div className="absolute -z-10 inset-0 flex items-center justify-center">
+                            <div className="absolute w-56 h-56 md:w-80 md:h-80 rounded-full border-4 border-[#F97366]/40"></div>
+                            <div className="absolute w-40 h-40 md:w-64 md:h-64 rounded-full border-4 border-[#F97366]/60"></div>
+                        </div>
 
-                            <div className="grid grid-cols-2 gap-4">
-                                {skills.map((skill, index) => (
-                                    <motion.div
-                                        key={skill}
-                                        initial={{ opacity: 0, scale: 0.8 }}
-                                        animate={{ opacity: 1, scale: 1 }}
-                                        transition={{ delay: 0.7 + index * 0.1 }}
-                                        className="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-300 group"
-                                    >
-                                        <p className="text-gray-700 font-medium group-hover:text-blue-600 transition-colors">
-                                            {skill}
-                                        </p>
-                                    </motion.div>
-                                ))}
-                            </div>
+                        {/* Coral angle brackets */}
+                        <div className="pointer-events-none absolute inset-0 flex items-center justify-between px-4 md:px-8">
+                            <span className="text-[#F97366] text-5xl md:text-6xl opacity-80 select-none">&lt;</span>
+                            <span className="text-[#F97366] text-5xl md:text-6xl opacity-80 select-none">&gt;</span>
+                        </div>
 
-                            {/* Decorative Elements */}
-                            <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-full blur-2xl"></div>
-                            <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full blur-2xl"></div>
+                        {/* Avatar with soft ring */}
+                        <div className="relative">
+                            <img
+                                src={photo}
+                                alt="Profile"
+                                className="w-40 h-40 md:w-64 md:h-64 rounded-full object-cover ring-2 ring-white/70"
+                                loading="eager"
+                            />
                         </div>
                     </motion.div>
+                </div>
+                {/* Bottom skills strip (full-width) */}
+                <div className="mt-16 relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen">
+                    <div className="mx-auto px-0">
+                        <div className="w-full rounded-none bg-[#0B1224]/80 border-t border-b border-white/5 px-4 sm:px-8 py-4">
+                            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-7 lg:grid-cols-9 gap-x-8 md:gap-x-10 gap-y-3 text-sm tracking-wide justify-items-center">
+                                <span className="text-white text-center">HTML</span>
+                                <span className="text-gray-400 text-center">CSS</span>
+                                <span className="text-gray-400 text-center">JavaScript</span>
+                                <span className="text-gray-400 text-center">React</span>
+                                <span className="text-gray-400 text-center">Node.js</span>
+                                <span className="text-gray-400 text-center">Express.js</span>
+                                <span className="text-gray-400 text-center">MongoDB</span>
+                                <span className="text-gray-400 text-center">Git</span>
+                                <span className="text-gray-400 text-center">Github</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

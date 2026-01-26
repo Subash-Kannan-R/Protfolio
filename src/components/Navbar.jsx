@@ -1,9 +1,22 @@
-import { useState } from 'react';
-import { Home, GraduationCap, FolderGit2, Mail } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Home, GraduationCap, FolderGit2, Mail, Sun, Moon } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const Navbar = () => {
     const [activeSection, setActiveSection] = useState('home');
+    const [isDark, setIsDark] = useState(false);
+
+    useEffect(() => {
+        if (isDark) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    }, [isDark]);
+
+    const toggleTheme = () => {
+        setIsDark(!isDark);
+    };
 
     const navItems = [
         { name: 'Home', href: '#home', icon: Home },
@@ -85,6 +98,42 @@ const Navbar = () => {
                         </motion.button>
                     );
                 })}
+
+                {/* Theme Toggle */}
+                <motion.button
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: navItems.length * 0.1 }}
+                    onClick={toggleTheme}
+                    className="group relative"
+                    aria-label="Toggle theme"
+                >
+                    <div className="
+                        w-12 h-12 rounded-full flex items-center justify-center
+                        backdrop-blur-md border transition-all duration-300
+                        bg-white/80 border-gray-300 hover:bg-gray-100 hover:border-gray-400
+                    ">
+                        {isDark ? (
+                            <Sun size={20} className="text-gray-700 group-hover:text-yellow-500 transition-colors duration-300" />
+                        ) : (
+                            <Moon size={20} className="text-gray-700 group-hover:text-blue-600 transition-colors duration-300" />
+                        )}
+                    </div>
+
+                    <div className="
+                        absolute left-full ml-4 top-1/2 -translate-y-1/2
+                        px-3 py-1.5 rounded-lg
+                        bg-gray-800/95 backdrop-blur-md border border-gray-700/50
+                        text-gray-100 text-sm font-medium whitespace-nowrap
+                        opacity-0 group-hover:opacity-100 pointer-events-none
+                        transition-all duration-300 group-hover:ml-6
+                    ">
+                        {isDark ? 'Light Mode' : 'Dark Mode'}
+                        <div className="absolute right-full top-1/2 -translate-y-1/2 
+                            border-4 border-transparent border-r-gray-800/95">
+                        </div>
+                    </div>
+                </motion.button>
             </div>
         </motion.nav>
     );

@@ -7,7 +7,7 @@ import ChatWidget from './components/ChatWidget'
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen transition-colors duration-300">
       <Navbar />
       <Hero />
       <Education />
