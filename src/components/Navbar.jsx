@@ -38,7 +38,7 @@ const Navbar = () => {
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="fixed left-6 top-1/2 -translate-y-1/2 z-50 hidden md:block"
+            className="fixed left-6 top-1/2 -translate-y-1/2 z-50 hidden md:block bg-gray-800/80 backdrop-blur-sm rounded-2xl p-4 border border-gray-700"
         >
             <div className="flex flex-col gap-4">
                 {navItems.map((item, index) => {

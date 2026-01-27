@@ -3,19 +3,10 @@ import { Github, Linkedin, Mail, Phone, MapPin, Code2 } from 'lucide-react';
 import photo from '../assets/photo.jpg';
 
 const Hero = () => {
-    const skills = [
-        'React.js',
-        'Node.js',
-        'Express.js',
-        'MongoDB',
-        'JavaScript',
-        'HTML5',
-        'CSS3',
-        'TailwindCSS',
-    ];
+    
 
     return (
-        <section id="home" className="min-h-screen flex items-center justify-center bg-[#0F172A]">
+        <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0F172A] to-[#1E293B] relative">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
                 <div className="grid md:grid-cols-2 gap-12 items-center">
                     {/* Left Content */}
@@ -171,19 +162,19 @@ const Hero = () => {
                     </motion.div>
                 </div>
                 {/* Bottom skills strip (full-width) */}
-                <div className="mt-16 relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen">
+                <div className="absolute bottom-0 left-0 right-0 w-full">
                     <div className="mx-auto px-0">
                         <div className="w-full rounded-none bg-[#0B1224]/80 border-t border-b border-white/5 px-4 sm:px-8 py-4">
                             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-7 lg:grid-cols-9 gap-x-8 md:gap-x-10 gap-y-3 text-sm tracking-wide justify-items-center">
                                 <span className="text-white text-center">HTML</span>
-                                <span className="text-gray-400 text-center">CSS</span>
-                                <span className="text-gray-400 text-center">JavaScript</span>
-                                <span className="text-gray-400 text-center">React</span>
-                                <span className="text-gray-400 text-center">Node.js</span>
-                                <span className="text-gray-400 text-center">Express.js</span>
-                                <span className="text-gray-400 text-center">MongoDB</span>
-                                <span className="text-gray-400 text-center">Git</span>
-                                <span className="text-gray-400 text-center">Github</span>
+                                <span className="text-white text-center">CSS</span>
+                                <span className="text-white text-center">JavaScript</span>
+                                <span className="text-white text-center">React</span>
+                                <span className="text-white text-center">Node.js</span>
+                                <span className="text-white text-center">Express.js</span>
+                                <span className="text-white text-center">MongoDB</span>
+                                <span className="text-white text-center">Git</span>
+                                <span className="text-white text-center">Github</span>
                             </div>
                         </div>
                     </div>

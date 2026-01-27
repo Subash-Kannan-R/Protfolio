@@ -78,7 +78,7 @@ const ChatWidget = () => {
         <>
             <div className="fixed bottom-6 right-6 z-40">
                 {isOpen && (
-                    <div className="w-80 sm:w-96 bg-white border border-gray-200 rounded-2xl shadow-2xl overflow-hidden glass backdrop-blur-sm">
+                    <div className="w-80 sm:w-96 bg-gray-800 border border-gray-600 rounded-2xl shadow-2xl overflow-hidden glass backdrop-blur-sm">
                         <div className="flex items-center justify-between px-4 py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white">
                             <div className="flex items-center gap-2">
                                 <MessageCircle size={18} />
@@ -105,7 +105,7 @@ const ChatWidget = () => {
                                             className={`max-w-[80%] rounded-2xl px-3 py-2 text-sm ${
                                                 msg.role === 'user'
                                                     ? 'bg-blue-600 text-white'
-                                                    : 'bg-white border border-gray-200 text-gray-800'
+                                                    : 'bg-gray-700 border border-gray-600 text-white'
                                             }`}
                                         >
                                             {msg.content}
@@ -113,7 +113,7 @@ const ChatWidget = () => {
                                     </div>
                                 ))}
                                 {isLoading && (
-                                    <div className="flex items-center gap-2 text-gray-500 text-sm">
+                                    <div className="flex items-center gap-2 text-gray-400 text-sm">
                                         <Loader2 className="animate-spin" size={16} />
                                         <span>Thinking...</span>
                                     </div>
@@ -121,14 +121,14 @@ const ChatWidget = () => {
                                 {error && <p className="text-red-500 text-sm">{error}</p>}
                             </div>
 
-                            <div className="p-3 border-t border-gray-200 bg-white">
+                            <div className="p-3 border-t border-gray-600 bg-gray-800">
                                 <div className="flex items-center gap-2">
                                     <textarea
                                         rows={1}
                                         value={input}
                                         onChange={(e) => setInput(e.target.value)}
                                         onKeyDown={handleKeyDown}
-                                        className="flex-1 resize-none rounded-xl border border-gray-300 focus:border-blue-500 focus:ring-blue-200 text-sm px-3 py-2 bg-gray-50"
+                                        className="flex-1 resize-none rounded-xl border border-gray-600 focus:border-blue-500 focus:ring-blue-200 text-sm px-3 py-2 bg-gray-700 text-white placeholder-gray-400"
                                         placeholder="Ask about projects, skills, timeline..."
                                     />
                                     <button

@@ -6,7 +6,7 @@ const Projects = () => {
         {
             title: 'E-Commerce Web Application',
             subtitle: 'T-Shirt Store',
-            date: 'Sept 2025 – Present',
+            date: 'Sept 2025 – Dec 2025',
             description: 'Built a React.js-based e-commerce web app with product catalog, shopping cart, and secure checkout.',
             features: [
                 'Integrated payment gateway and authentication',
@@ -54,7 +54,7 @@ const Projects = () => {
     ];
 
     return (
-        <section id="projects" className="min-h-screen py-20">
+        <section id="projects" className="min-h-screen py-20 bg-gradient-to-br from-[#0F172A] to-[#1E293B]">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -85,9 +85,9 @@ const Projects = () => {
                                     <div className={`inline-flex p-4 bg-gradient-to-r ${project.gradient} rounded-xl mb-4`}>
                                         <project.icon size={40} className="text-white" />
                                     </div>
-                                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{project.title}</h3>
-                                    <p className="text-blue-600 dark:text-blue-400 font-medium mb-2">{project.subtitle}</p>
-                                    <p className="text-gray-600 dark:text-gray-400 text-sm flex items-center gap-2">
+                                    <h3 className="text-2xl font-bold text-white mb-2">{project.title}</h3>
+                                    <p className="text-blue-400 font-medium mb-2">{project.subtitle}</p>
+                                    <p className="text-gray-400 text-sm flex items-center gap-2">
                                         <Code size={16} />
                                         {project.date}
                                     </p>
@@ -95,25 +95,28 @@ const Projects = () => {
 
                                 {/* Middle - Description & Features */}
                                 <div className="md:col-span-2 space-y-4">
-                                    <p className="text-gray-700 dark:text-gray-300 leading-relaxed">{project.description}</p>
+                                    {project.image && (
+                                        <img src={project.image} alt={project.title} className="w-full h-48 object-cover rounded-lg" />
+                                    )}
+                                    <p className="text-gray-300 leading-relaxed">{project.description}</p>
 
                                     <div className="space-y-2">
                                         {project.features.map((feature, idx) => (
                                             <div key={idx} className="flex items-start gap-2">
-                                                <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-600"></div>
-                                                <p className="text-gray-600 text-sm">{feature}</p>
+                                                <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400"></div>
+                                                <p className="text-gray-300 text-sm">{feature}</p>
                                             </div>
                                         ))}
                                     </div>
 
                                     {/* Tech Stack */}
                                     <div>
-                                        <p className="text-gray-500 text-sm mb-2">Technologies:</p>
+                                        <p className="text-gray-400 text-sm mb-2">Technologies:</p>
                                         <div className="flex flex-wrap gap-2">
                                             {project.tech.map((tech, idx) => (
                                                 <span
                                                     key={idx}
-                                                    className="px-3 py-1 bg-blue-50 border border-blue-200 rounded-full text-blue-600 text-sm font-medium"
+                                                    className="px-3 py-1 bg-blue-900/50 border border-blue-700 rounded-full text-blue-300 text-sm font-medium"
                                                 >
                                                     {tech}
                                                 </span>
@@ -123,18 +126,30 @@ const Projects = () => {
 
                                     {/* Tools */}
                                     <div>
-                                        <p className="text-gray-500 text-sm mb-2">Tools:</p>
+                                        <p className="text-gray-400 text-sm mb-2">Tools:</p>
                                         <div className="flex flex-wrap gap-2">
                                             {project.tools.map((tool, idx) => (
                                                 <span
                                                     key={idx}
-                                                    className="px-3 py-1 bg-gray-50 border border-gray-200 rounded-full text-gray-700 text-sm"
+                                                    className="px-3 py-1 bg-gray-700 border border-gray-600 rounded-full text-gray-300 text-sm"
                                                 >
                                                     {tool}
                                                 </span>
                                             ))}
                                         </div>
                                     </div>
+
+                                    {/* Images */}
+                                    {project.images && project.images.length > 0 && (
+                                        <div>
+                                            <p className="text-gray-400 text-sm mb-2">Project Images:</p>
+                                            <div className="grid grid-cols-2 gap-2">
+                                                {project.images.map((img, idx) => (
+                                                    <img key={idx} src={img} alt={`${project.title} ${idx + 1}`} className="w-full h-32 object-cover rounded-lg" />
+                                                ))}
+                                            </div>
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         </motion.div>

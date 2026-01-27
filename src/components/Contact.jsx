@@ -72,7 +72,7 @@ const Contact = () => {
     };
 
     return (
-        <section id="contact" className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-20 relative overflow-hidden">
+        <section id="contact" className="min-h-screen bg-gradient-to-br from-[#0F172A] to-[#1E293B] py-20 relative overflow-hidden">
             {/* Animated Background Elements */}
             <div className="absolute inset-0 overflow-hidden">
                 <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
