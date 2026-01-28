@@ -72,7 +72,7 @@ const Contact = () => {
     };
 
     return (
-        <section id="contact" className="min-h-screen bg-gradient-to-br from-[#0F172A] to-[#1E293B] py-20 relative overflow-hidden">
+        <section id="contact" className="min-h-screen bg-gradient-to-br from-[#0F172A] to-[#1E293B] py-12 sm:py-16 md:py-20 relative overflow-hidden">
             {/* Animated Background Elements */}
             <div className="absolute inset-0 overflow-hidden">
                 <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
@@ -86,17 +86,17 @@ const Contact = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
-                    className="text-center mb-16"
+                    className="text-center mb-8 md:mb-16"
                 >
-                    <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 bg-blue-500/10 backdrop-blur-sm rounded-full border border-blue-500/20">
-                        <Sparkles className="w-4 h-4 text-blue-400" />
-                        <span className="text-blue-400 text-sm font-medium">Let's Connect</span>
+                    <div className="inline-flex items-center gap-2 mb-4 px-3 sm:px-4 py-2 bg-blue-500/10 backdrop-blur-sm rounded-full border border-blue-500/20">
+                        <Sparkles className="w-4 h-4 text-blue-400 flex-shrink-0" />
+                        <span className="text-blue-400 text-xs sm:text-sm font-medium">Let's Connect</span>
                     </div>
                     
-                    <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">
                         Get In <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500 bg-clip-text text-transparent animate-gradient-x">Touch</span>
                     </h2>
-                    <p className="text-gray-400 text-xl max-w-2xl mx-auto">
+                    <p className="text-gray-400 text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
                         Ready to bring your ideas to life? Let's create something amazing together.
                     </p>
                 </motion.div>
@@ -106,7 +106,7 @@ const Contact = () => {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
-                    className="grid lg:grid-cols-2 gap-8"
+                    className="grid lg:grid-cols-2 gap-6 md:gap-8"
                 >
                     {/* Contact Information Card */}
                     <motion.div
@@ -114,18 +114,18 @@ const Contact = () => {
                         className="relative group"
                     >
                         <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-                        <div className="relative bg-gray-900/80 backdrop-blur-xl border border-gray-800 rounded-3xl p-8 shadow-2xl">
+                        <div className="relative bg-gray-900/80 backdrop-blur-xl border border-gray-800 rounded-3xl p-5 sm:p-6 md:p-8 shadow-2xl">
                             <motion.div
                                 initial={{ scale: 0.95 }}
                                 whileInView={{ scale: 1 }}
                                 transition={{ type: "spring", stiffness: 100 }}
-                                className="mb-8"
+                                className="mb-6 md:mb-8"
                             >
-                                <h3 className="text-3xl font-bold text-white mb-2">Contact Information</h3>
-                                <p className="text-gray-400">Feel free to reach out through any platform</p>
+                                <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">Contact Information</h3>
+                                <p className="text-gray-400 text-sm sm:text-base">Feel free to reach out through any platform</p>
                             </motion.div>
 
-                            <div className="space-y-4 mb-8">
+                            <div className="space-y-3 sm:space-y-4 mb-6 md:mb-8">
                                 {contactInfo.map((item, index) => (
                                     <motion.div
                                         key={index}
@@ -156,13 +156,13 @@ const Contact = () => {
                                                 <ArrowRight className="w-5 h-5 text-gray-600 group-hover/item:text-blue-400 transform group-hover/item:translate-x-2 transition-all" />
                                             </a>
                                         ) : (
-                                            <div className="flex items-center gap-6 p-5 bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl">
-                                                <div className={`p-4 bg-gradient-to-r ${item.gradient} rounded-xl`}>
-                                                    <item.icon className="w-6 h-6 text-white" />
+                                            <div className="flex items-center gap-4 sm:gap-6 p-3 sm:p-5 bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl">
+                                                <div className={`p-2 sm:p-4 bg-gradient-to-r ${item.gradient} rounded-xl flex-shrink-0`}>
+                                                    <item.icon className="w-5 sm:w-6 h-5 sm:h-6 text-white" />
                                                 </div>
-                                                <div className="flex-1">
-                                                    <p className="text-gray-400 text-sm mb-1">{item.label}</p>
-                                                    <p className="text-white font-semibold text-lg">{item.value}</p>
+                                                <div className="flex-1 min-w-0">
+                                                    <p className="text-gray-400 text-xs sm:text-sm mb-1">{item.label}</p>
+                                                    <p className="text-white font-semibold text-sm sm:text-lg truncate">{item.value}</p>
                                                 </div>
                                             </div>
                                         )}
@@ -173,10 +173,10 @@ const Contact = () => {
                             {/* Social Links */}
                             <motion.div
                                 variants={itemVariants}
-                                className="pt-8 border-t border-gray-800"
+                                className="pt-6 md:pt-8 border-t border-gray-800"
                             >
-                                <h4 className="text-white font-semibold text-xl mb-6">Connect with me</h4>
-                                <div className="flex gap-4">
+                                <h4 className="text-white font-semibold text-lg sm:text-xl mb-4 sm:mb-6">Connect with me</h4>
+                                <div className="flex gap-3 sm:gap-4">
                                     {socialLinks.map((social, index) => (
                                         <motion.a
                                             key={index}
@@ -188,9 +188,9 @@ const Contact = () => {
                                             className="relative group flex-1"
                                         >
                                             <div className="absolute inset-0 bg-gradient-to-r from-gray-800 to-gray-900 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                                            <div className="relative p-4 bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-xl group-hover:border-transparent transition-all duration-300 flex items-center justify-center gap-3">
-                                                <social.icon className="w-6 h-6 text-white group-hover:scale-110 transition-transform" />
-                                                <span className="text-white font-medium">{social.label}</span>
+                                            <div className="relative p-3 sm:p-4 bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-xl group-hover:border-transparent transition-all duration-300 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3">
+                                                <social.icon className="w-5 sm:w-6 h-5 sm:h-6 text-white group-hover:scale-110 transition-transform" />
+                                                <span className="text-white font-medium text-xs sm:text-base hidden sm:inline">{social.label}</span>
                                             </div>
                                         </motion.a>
                                     ))}
@@ -205,31 +205,31 @@ const Contact = () => {
                         className="relative"
                     >
                         <div className="absolute inset-0 bg-gradient-to-br from-blue-500/30 via-transparent to-purple-500/30 rounded-3xl blur-2xl"></div>
-                        <div className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 backdrop-blur-xl border border-gray-800 rounded-3xl p-8 shadow-2xl overflow-hidden">
-                            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-blue-500/20 to-transparent rounded-full -translate-y-16 translate-x-16"></div>
-                            <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-purple-500/20 to-transparent rounded-full translate-y-16 -translate-x-16"></div>
+                        <div className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 backdrop-blur-xl border border-gray-800 rounded-3xl p-5 sm:p-6 md:p-8 shadow-2xl overflow-hidden">
+                            <div className="absolute top-0 right-0 w-24 sm:w-32 h-24 sm:h-32 bg-gradient-to-bl from-blue-500/20 to-transparent rounded-full -translate-y-12 sm:-translate-y-16 translate-x-12 sm:translate-x-16"></div>
+                            <div className="absolute bottom-0 left-0 w-24 sm:w-32 h-24 sm:h-32 bg-gradient-to-tr from-purple-500/20 to-transparent rounded-full translate-y-12 sm:translate-y-16 -translate-x-12 sm:-translate-x-16"></div>
 
-                            <div className="relative space-y-8 text-center">
+                            <div className="relative space-y-6 sm:space-y-8 text-center">
                                 <motion.div
                                     whileHover={{ rotate: 360 }}
                                     transition={{ duration: 0.5 }}
-                                    className="inline-flex p-6 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl shadow-lg shadow-blue-500/25"
+                                    className="inline-flex p-4 sm:p-6 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl shadow-lg shadow-blue-500/25"
                                 >
-                                    <Send className="w-8 h-8 text-white" />
+                                    <Send className="w-6 sm:w-8 h-6 sm:h-8 text-white" />
                                 </motion.div>
 
                                 <div>
-                                    <h3 className="text-3xl font-bold text-white mb-4">
+                                    <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3 sm:mb-4">
                                         Let's Build Something <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Extraordinary</span>
                                     </h3>
-                                    <p className="text-gray-400 text-lg leading-relaxed">
+                                    <p className="text-gray-400 text-sm sm:text-base md:text-lg leading-relaxed">
                                         I'm passionate about creating innovative solutions and currently exploring new opportunities. 
                                         Whether it's a project discussion or a creative collaboration, I'd love to hear from you!
                                     </p>
                                 </div>
 
                                 <motion.div 
-                                    className="space-y-4 pt-4"
+                                    className="space-y-3 sm:space-y-4 pt-3 sm:pt-4"
                                     variants={containerVariants}
                                 >
                                     <motion.a
@@ -239,10 +239,10 @@ const Contact = () => {
                                         whileTap={{ scale: 0.98 }}
                                         onHoverStart={() => setIsEmailHovered(true)}
                                         onHoverEnd={() => setIsEmailHovered(false)}
-                                        className="relative group block w-full px-8 py-5 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-bold rounded-2xl overflow-hidden"
+                                        className="relative group block w-full px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-5 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-bold rounded-2xl overflow-hidden"
                                     >
                                         <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                                        <div className="relative flex items-center justify-center gap-3">
+                                        <div className="relative flex items-center justify-center gap-2 sm:gap-3 text-xs sm:text-sm md:text-base">
                                             <span>Send me an email</span>
                                             <motion.div
                                                 animate={{ x: isEmailHovered ? 5 : 0 }}
@@ -263,9 +263,9 @@ const Contact = () => {
                                         whileTap={{ scale: 0.98 }}
                                         onHoverStart={() => setIsLinkedInHovered(true)}
                                         onHoverEnd={() => setIsLinkedInHovered(false)}
-                                        className="relative group block w-full px-8 py-5 bg-gray-800/50 backdrop-blur-sm border-2 border-gray-700 text-white font-bold rounded-2xl hover:border-blue-500/50 transition-all duration-300"
+                                        className="relative group block w-full px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-5 bg-gray-800/50 backdrop-blur-sm border-2 border-gray-700 text-white font-bold rounded-2xl hover:border-blue-500/50 transition-all duration-300"
                                     >
-                                        <div className="flex items-center justify-center gap-3">
+                                        <div className="flex items-center justify-center gap-2 sm:gap-3 text-xs sm:text-sm md:text-base">
                                             <Linkedin className="w-5 h-5" />
                                             <span>Connect on LinkedIn</span>
                                             <motion.div
@@ -283,9 +283,9 @@ const Contact = () => {
                                         whileHover={{ scale: 1.02 }}
                                         whileTap={{ scale: 0.98 }}
                                         onClick={() => window.dispatchEvent(new Event('open-chat'))}
-                                        className="group block w-full px-8 py-5 bg-gradient-to-r from-gray-800 to-gray-900 border-2 border-gray-700 text-white font-bold rounded-2xl hover:border-cyan-500/50 transition-all duration-300"
+                                        className="group block w-full px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-5 bg-gradient-to-r from-gray-800 to-gray-900 border-2 border-gray-700 text-white font-bold rounded-2xl hover:border-cyan-500/50 transition-all duration-300"
                                     >
-                                        <div className="flex items-center justify-center gap-3">
+                                        <div className="flex items-center justify-center gap-2 sm:gap-3 text-xs sm:text-sm md:text-base">
                                             <MessageSquare className="w-5 h-5 group-hover:text-cyan-400 transition-colors" />
                                             <span>Ask AI about my projects</span>
                                             <motion.div
@@ -309,14 +309,14 @@ const Contact = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.5 }}
-                    className="mt-16 pt-8 border-t border-gray-800 text-center"
+                    className="mt-12 md:mt-16 pt-6 md:pt-8 border-t border-gray-800 text-center"
                 >
-                    <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-                        <p className="text-gray-500">
+                    <div className="flex flex-col md:flex-row items-center justify-center md:justify-between gap-3 sm:gap-4">
+                        <p className="text-gray-500 text-xs sm:text-sm">
                             © 2025 Subash Kannan R. Crafted with passion using React & TailwindCSS
                         </p>
-                        <div className="flex items-center gap-2 text-gray-500">
-                            <Sparkles className="w-4 h-4 text-blue-400" />
+                        <div className="flex items-center gap-2 text-gray-500 text-xs sm:text-sm">
+                            <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-blue-400 flex-shrink-0" />
                             <span>Always learning, always building</span>
                         </div>
                     </div>

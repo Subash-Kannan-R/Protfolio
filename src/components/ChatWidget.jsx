@@ -76,13 +76,13 @@ const ChatWidget = () => {
 
     return (
         <>
-            <div className="fixed bottom-6 right-6 z-40">
+            <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40">
                 {isOpen && (
-                    <div className="w-80 sm:w-96 bg-gray-800 border border-gray-600 rounded-2xl shadow-2xl overflow-hidden glass backdrop-blur-sm">
-                        <div className="flex items-center justify-between px-4 py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white">
-                            <div className="flex items-center gap-2">
-                                <MessageCircle size={18} />
-                                <span className="font-semibold">Ask about my projects</span>
+                    <div className="w-72 sm:w-80 md:w-96 bg-gray-800 border border-gray-600 rounded-2xl shadow-2xl overflow-hidden glass backdrop-blur-sm">
+                        <div className="flex items-center justify-between px-3 sm:px-4 py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white">
+                            <div className="flex items-center gap-2 min-w-0">
+                                <MessageCircle size={16} className="flex-shrink-0" />
+                                <span className="font-semibold text-sm truncate">Ask about my projects</span>
                             </div>
                             <button
                                 type="button"
@@ -94,15 +94,15 @@ const ChatWidget = () => {
                             </button>
                         </div>
 
-                        <div className="flex flex-col h-96">
-                            <div className="flex-1 overflow-y-auto p-4 space-y-3 bg-gray-50">
+                        <div className="flex flex-col h-80 sm:h-96">
+                            <div className="flex-1 overflow-y-auto p-3 sm:p-4 space-y-3 bg-gray-50">
                                 {messages.map((msg, index) => (
                                     <div
                                         key={`${msg.role}-${index}`}
                                         className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
                                     >
                                         <div
-                                            className={`max-w-[80%] rounded-2xl px-3 py-2 text-sm ${
+                                            className={`max-w-[85%] rounded-2xl px-3 py-2 text-xs sm:text-sm ${
                                                 msg.role === 'user'
                                                     ? 'bg-blue-600 text-white'
                                                     : 'bg-gray-700 border border-gray-600 text-white'
@@ -113,32 +113,32 @@ const ChatWidget = () => {
                                     </div>
                                 ))}
                                 {isLoading && (
-                                    <div className="flex items-center gap-2 text-gray-400 text-sm">
-                                        <Loader2 className="animate-spin" size={16} />
+                                    <div className="flex items-center gap-2 text-gray-400 text-xs sm:text-sm">
+                                        <Loader2 className="animate-spin" size={14} />
                                         <span>Thinking...</span>
                                     </div>
                                 )}
-                                {error && <p className="text-red-500 text-sm">{error}</p>}
+                                {error && <p className="text-red-500 text-xs sm:text-sm">{error}</p>}
                             </div>
 
-                            <div className="p-3 border-t border-gray-600 bg-gray-800">
+                            <div className="p-2 sm:p-3 border-t border-gray-600 bg-gray-800">
                                 <div className="flex items-center gap-2">
                                     <textarea
                                         rows={1}
                                         value={input}
                                         onChange={(e) => setInput(e.target.value)}
                                         onKeyDown={handleKeyDown}
-                                        className="flex-1 resize-none rounded-xl border border-gray-600 focus:border-blue-500 focus:ring-blue-200 text-sm px-3 py-2 bg-gray-700 text-white placeholder-gray-400"
-                                        placeholder="Ask about projects, skills, timeline..."
+                                        className="flex-1 resize-none rounded-xl border border-gray-600 focus:border-blue-500 focus:ring-blue-200 text-xs sm:text-sm px-2 sm:px-3 py-2 bg-gray-700 text-white placeholder-gray-400"
+                                        placeholder="Ask about projects, skills..."
                                     />
                                     <button
                                         type="button"
                                         onClick={sendMessage}
                                         disabled={isLoading}
-                                        className="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-blue-500 to-blue-600 text-white px-3 py-2 shadow-sm hover:shadow-md transition disabled:opacity-60"
+                                        className="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-blue-500 to-blue-600 text-white px-2 sm:px-3 py-2 shadow-sm hover:shadow-md transition disabled:opacity-60 flex-shrink-0"
                                         aria-label="Send message"
                                     >
-                                        <Send size={16} />
+                                        <Send size={14} className="sm:w-[16px] sm:h-[16px]" />
                                     </button>
                                 </div>
                             </div>
@@ -149,10 +149,10 @@ const ChatWidget = () => {
                 <button
                     type="button"
                     onClick={handleToggle}
-                    className="w-14 h-14 rounded-full bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-lg hover:shadow-xl flex items-center justify-center transition focus:outline-none focus:ring-2 focus:ring-blue-300"
+                    className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-lg hover:shadow-xl flex items-center justify-center transition focus:outline-none focus:ring-2 focus:ring-blue-300"
                     aria-label="Open chat"
                 >
-                    {isOpen ? <X size={22} /> : <MessageCircle size={22} />}
+                    {isOpen ? <X size={20} className="sm:w-[22px] sm:h-[22px]" /> : <MessageCircle size={20} className="sm:w-[22px] sm:h-[22px]" />}
                 </button>
             </div>
         </>

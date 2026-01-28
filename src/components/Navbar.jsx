@@ -38,7 +38,7 @@ const Navbar = () => {
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="fixed left-6 top-1/2 -translate-y-1/2 z-50 hidden md:block bg-gray-800/80 backdrop-blur-sm rounded-2xl p-4 border border-gray-700"
+            className="fixed left-3 sm:left-6 top-1/2 -translate-y-1/2 z-50 hidden md:block bg-gray-800/80 backdrop-blur-sm rounded-2xl p-3 sm:p-4 border border-gray-700"
         >
             <div className="flex flex-col gap-4">
                 {navItems.map((item, index) => {
@@ -57,7 +57,7 @@ const Navbar = () => {
                         >
                             {/* Circular button with glassmorphism */}
                             <div className={`
-                                w-12 h-12 rounded-full flex items-center justify-center
+                                w-10 sm:w-12 h-10 sm:h-12 rounded-full flex items-center justify-center
                                 backdrop-blur-md border transition-all duration-300
                                 ${isActive
                                     ? 'bg-blue-500 border-blue-400 shadow-lg shadow-blue-500/50'
@@ -65,7 +65,7 @@ const Navbar = () => {
                                 }
                             `}>
                                 <Icon
-                                    size={20}
+                                    size={18}
                                     className={`transition-colors duration-300 ${isActive ? 'text-white' : 'text-gray-700 group-hover:text-blue-600'
                                         }`}
                                 />
