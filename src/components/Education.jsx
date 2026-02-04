@@ -15,7 +15,7 @@ const Education = () => {
             institution: 'Softlogic Systems',
             degree: 'MERN Stack Developer',
             field: 'Full Stack Web Development',
-            duration: 'Jun 2024 – Nov 2024',
+            duration: 'Jun 2025 – Nov 2025',
             icon: Code,
             gradient: 'from-purple-500 to-pink-500',
         },
