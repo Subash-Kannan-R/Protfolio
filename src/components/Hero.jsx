@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, Phone, MapPin, Code2 } from 'lucide-react';
 import photo from '../assets/photo.jpg';
+import resume from '../assets/SUBASHKANNAN-R(MERN).pdf';
 
 const Hero = () => {
     
@@ -90,7 +91,7 @@ const Hero = () => {
                                 Got a project?
                             </a>
                             <a
-                                href="/resume.pdf"
+                                href={resume}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="px-4 sm:px-5 py-2 sm:py-3 rounded-lg border border-[#F97366] text-white text-sm sm:text-base font-medium hover:bg-[#F97366]/10 transition text-center"
